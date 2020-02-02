@@ -49,16 +49,10 @@ int saveData(const char* filename){
     }
     int count3 = 0;
     for(vector<process_stats>::iterator it = statsList.begin();it!=statsList.end();it++){
-        if(count3 ==0){
-            outputStream << it->process_number;
-        }else if(count3 ==1){
-            outputStream << ","<<it->start_time;
-        }else if(count3 ==2){
-            outputStream << ","<<it->cpu_time;
-        }else{
-            outputStream<< std::endl;
-        }
-        count3++;
+        outputStream << it->process_number;
+        outputStream << ","<<it->start_time;
+        outputStream << ","<<it->cpu_time;
+        outputStream << std::endl;
     }
     return SUCCESS;
 }
