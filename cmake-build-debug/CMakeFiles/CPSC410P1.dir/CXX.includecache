@@ -6,3 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/allan/CLionProjects/CPSC410P1/utilities.cpp
+fstream
+-
+vector
+-
+sstream
+-
+iostream
+-
+utilities.h
+/home/allan/CLionProjects/CPSC410P1/utilities.h
+
+/home/allan/CLionProjects/CPSC410P1/utilities.h
+
