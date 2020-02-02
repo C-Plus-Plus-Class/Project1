@@ -40,7 +40,27 @@ int loadData(const char* filename){
 }
 
 int saveData(const char* filename){
-    return FAIL;
+    ofstream outputStream;
+    outputStream.open(filename);
+    if(!outputStream.is_open()||outputStream.fail()) {
+        outputStream.close();
+        outputStream.close();
+        return COULD_NOT_OPEN_FILE;
+    }
+    int count3 = 0;
+    for(vector<process_stats>::iterator it = statsList.begin();it!=statsList.end();it++){
+        if(count3 ==0){
+            outputStream << it->process_number;
+        }else if(count3 ==1){
+            outputStream << ","<<it->start_time;
+        }else if(count3 ==2){
+            outputStream << ","<<it->cpu_time;
+        }else{
+            outputStream<< std::endl;
+        }
+        count3++;
+    }
+    return SUCCESS;
 }
 
 void sortData(SORT_ORDER mySortOrder){
