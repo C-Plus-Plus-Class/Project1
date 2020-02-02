@@ -123,32 +123,59 @@ CPSC410P1/fast:
 	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/build
 .PHONY : CPSC410P1/fast
 
-main.o: main.cpp.o
+fileio.o: fileio.cpp.o
 
-.PHONY : main.o
+.PHONY : fileio.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/main.cpp.o
-.PHONY : main.cpp.o
+fileio.cpp.o:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/fileio.cpp.o
+.PHONY : fileio.cpp.o
 
-main.i: main.cpp.i
+fileio.i: fileio.cpp.i
 
-.PHONY : main.i
+.PHONY : fileio.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/main.cpp.i
-.PHONY : main.cpp.i
+fileio.cpp.i:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/fileio.cpp.i
+.PHONY : fileio.cpp.i
 
-main.s: main.cpp.s
+fileio.s: fileio.cpp.s
 
-.PHONY : main.s
+.PHONY : fileio.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/main.cpp.s
-.PHONY : main.cpp.s
+fileio.cpp.s:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/fileio.cpp.s
+.PHONY : fileio.cpp.s
+
+utilities.o: utilities.cpp.o
+
+.PHONY : utilities.o
+
+# target to build an object file
+utilities.cpp.o:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/utilities.cpp.o
+.PHONY : utilities.cpp.o
+
+utilities.i: utilities.cpp.i
+
+.PHONY : utilities.i
+
+# target to preprocess a source file
+utilities.cpp.i:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/utilities.cpp.i
+.PHONY : utilities.cpp.i
+
+utilities.s: utilities.cpp.s
+
+.PHONY : utilities.s
+
+# target to generate assembly for a file
+utilities.cpp.s:
+	$(MAKE) -f CMakeFiles/CPSC410P1.dir/build.make CMakeFiles/CPSC410P1.dir/utilities.cpp.s
+.PHONY : utilities.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... CPSC410P1"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... fileio.o"
+	@echo "... fileio.i"
+	@echo "... fileio.s"
+	@echo "... utilities.o"
+	@echo "... utilities.i"
+	@echo "... utilities.s"
 .PHONY : help
 
 

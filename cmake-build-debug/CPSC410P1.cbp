@@ -84,7 +84,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/allan/CLionProjects/CPSC410P1/main.cpp">
+		<Unit filename="/home/allan/CLionProjects/CPSC410P1/fileio.cpp">
+			<Option target="CPSC410P1"/>
+		</Unit>
+		<Unit filename="/home/allan/CLionProjects/CPSC410P1/utilities.cpp">
+			<Option target="CPSC410P1"/>
+		</Unit>
+		<Unit filename="/home/allan/CLionProjects/CPSC410P1/utilities.h">
 			<Option target="CPSC410P1"/>
 		</Unit>
 		<Unit filename="/home/allan/CLionProjects/CPSC410P1/CMakeLists.txt">

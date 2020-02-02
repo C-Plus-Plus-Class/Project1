@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/CPSC410P1.dir/main.cpp.o  -o CPSC410P1 
+/usr/bin/c++  -g   CMakeFiles/CPSC410P1.dir/fileio.cpp.o CMakeFiles/CPSC410P1.dir/utilities.cpp.o  -o CPSC410P1 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CPSC410P1.dir/main.cpp.o"
+  "CMakeFiles/CPSC410P1.dir/fileio.cpp.o"
+  "CMakeFiles/CPSC410P1.dir/utilities.cpp.o"
   "CPSC410P1"
   "CPSC410P1.pdb"
 )
