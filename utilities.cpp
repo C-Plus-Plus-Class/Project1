@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 #include "utilities.h"
 using namespace std;
 
@@ -57,8 +58,28 @@ int saveData(const char* filename){
     return SUCCESS;
 }
 
-void sortData(SORT_ORDER mySortOrder){
+//sort methods
+bool sortByProcessNumber(const process_stats &a, const process_stats &b)
+{
+    return a.process_number<b.process_number;
+}
+bool sortByStartTime(const process_stats &a, const process_stats &b)
+{
+    return a.start_time<b.start_time;
+}
+bool sortByCPUTime(const process_stats &a, const process_stats &b)
+{
+    return a.cpu_time<b.cpu_time;
+}
 
+void sortData(SORT_ORDER mySortOrder){
+    if(mySortOrder==PROCESS_NUMBER){
+        std::sort(statsList.begin(), statsList.end(), sortByProcessNumber);
+    }else if(mySortOrder==START_TIME){
+        std::sort(statsList.begin(), statsList.end(), sortByStartTime);
+    }else if(mySortOrder==CPU_TIME){
+        std::sort(statsList.begin(), statsList.end(), sortByCPUTime);
+    }
 }
 
 process_stats getNext(){
