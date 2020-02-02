@@ -20,14 +20,19 @@ int loadData(const char* filename){
     statsList.clear();
     string line;
     while (getline(inputStream, line)) {
-        std::stringstream ss(line);
-        int processNumber;ss>>processNumber;
-        int startTime;ss>>startTime;
-        int cpuTime;ss>>cpuTime;
         process_stats stats;
-            stats.process_number = processNumber;
-            stats.start_time = startTime;
-            stats.cpu_time = cpuTime;
+        std::stringstream ss(line);
+        string number;int ct = 0;
+        while(std::getline(ss,number,',')){
+            if(ct == 0){
+                stats.process_number=std::stoi(number);
+            }else if(ct == 1){
+                stats.start_time=std::stoi(number);
+            }else{
+                stats.cpu_time=std::stoi(number);
+            }
+            ct++;
+        }
         statsList.push_back(stats);
     }
     inputStream.close();
@@ -43,10 +48,8 @@ void sortData(SORT_ORDER mySortOrder){
 }
 
 process_stats getNext(){
-    process_stats pStats;
-        pStats.process_number=0;
-        pStats.start_time=0;
-        pStats.cpu_time=0;
-    return pStats;
+    process_stats stats = statsList.at(0);
+    statsList.erase(statsList.begin());
+    return stats;
 }
 
