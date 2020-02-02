@@ -20,11 +20,11 @@ int loadData(const char* filename){
     }
     statsList.clear();
     string line;
-    while (getline(inputStream, line)) {
+    while (getline(inputStream, line)) {//each line
         process_stats stats;
         std::stringstream ss(line);
         string number;int ct = 0;
-        while(std::getline(ss,number,',')){
+        while(std::getline(ss,number,',')){//each comma
             if(ct == 0){
                 stats.process_number=std::stoi(number);
             }else if(ct == 1){
@@ -45,10 +45,9 @@ int saveData(const char* filename){
     outputStream.open(filename);
     if(!outputStream.is_open()||outputStream.fail()) {
         outputStream.close();
-        outputStream.close();
         return COULD_NOT_OPEN_FILE;
     }
-    int count3 = 0;
+    //line by line output csv
     for(vector<process_stats>::iterator it = statsList.begin();it!=statsList.end();it++){
         outputStream << it->process_number;
         outputStream << ","<<it->start_time;
@@ -58,15 +57,17 @@ int saveData(const char* filename){
     return SUCCESS;
 }
 
-//sort methods
+/**For sorting Vector of processStats by processNumber*/
 bool sortByProcessNumber(const process_stats &a, const process_stats &b)
 {
     return a.process_number<b.process_number;
 }
+/**For sorting Vector of processStats by StartTime*/
 bool sortByStartTime(const process_stats &a, const process_stats &b)
 {
     return a.start_time<b.start_time;
 }
+/**For sorting Vector of processStats by cpuTime*/
 bool sortByCPUTime(const process_stats &a, const process_stats &b)
 {
     return a.cpu_time<b.cpu_time;
@@ -83,8 +84,8 @@ void sortData(SORT_ORDER mySortOrder){
 }
 
 process_stats getNext(){
-    process_stats stats = statsList.at(0);
-    statsList.erase(statsList.begin());
+    process_stats stats = statsList.at(0);//hold first element
+    statsList.erase(statsList.begin());//delete first element
     return stats;
 }
 
